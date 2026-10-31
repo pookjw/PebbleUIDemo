@@ -1,0 +1,5 @@
+framework module PebbleUI {
+  umbrella header "PebbleUI.h"
+  export *
+  module * { export * }
+}

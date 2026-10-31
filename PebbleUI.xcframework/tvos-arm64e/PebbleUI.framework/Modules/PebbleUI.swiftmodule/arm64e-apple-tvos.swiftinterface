@@ -1,0 +1,380 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4.2
+// swift-module-flags: -target arm64e-apple-tvos27.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -module-name PebbleUI
+@_exported import PebbleUI
+import _Concurrency
+import SwiftUI
+import UIKit
+import CoreGraphics
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleNavigationLink<Destination> : SwiftUI.View where Destination : SwiftUI.View {
+  @_Concurrency.MainActor @preconcurrency public init<Label>(@SwiftUI.ViewBuilder destination: () -> Destination, @SwiftUI.ViewBuilder label: () -> Label) where Label : SwiftUI.View
+  @_Concurrency.MainActor @preconcurrency public init(_ title: Swift.String, destination: Destination)
+  @_Concurrency.MainActor @preconcurrency public init(_ title: SwiftUI.LocalizedStringKey, destination: Destination)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A14NavigationLinkV4bodyQrvp", 0) __<Destination>
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleTabView<Selection, Content> : SwiftUI.View where Selection : Swift.Hashable, Content : SwiftUI.View {
+  @_Concurrency.MainActor @preconcurrency public init(selection: SwiftUI.Binding<Selection>, @SwiftUI.ViewBuilder content: () -> Content)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A7TabViewV4bodyQrvp", 0) __<Selection, Content>
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleGlassButtonStyle : SwiftUI.PrimitiveButtonStyle {
+  public init()
+  @_Concurrency.MainActor @preconcurrency public func makeBody(configuration: SwiftUI.PrimitiveButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A16GlassButtonStyleV8makeBody13configurationQr05SwiftB009PrimitivedE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency @propertyWrapper public struct PebbleScaledMetric<Value> : SwiftUI.DynamicProperty where Value : Swift.BinaryFloatingPoint {
+  public init(wrappedValue: Value)
+  public init(wrappedValue: Value, relativeTo: SwiftUI.Font.TextStyle)
+  public var wrappedValue: Value { get }
+}
+
+public struct PebbleSearchHostData {}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleSearchHost<Content> : SwiftUI.View where Content : SwiftUI.View {
+  public init(@SwiftUI.ViewBuilder content: (PebbleSearchHostData) -> Content)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A10SearchHostV4bodyQrvp", 0) __<Content>
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleSearchButton : SwiftUI.View {
+  public init(data: PebbleSearchHostData)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A12SearchButtonV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleGlassProminentButtonStyle : SwiftUI.PrimitiveButtonStyle {
+  public init()
+  public func makeBody(configuration: SwiftUI.PrimitiveButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A25GlassProminentButtonStyleV8makeBody13configurationQr05SwiftB009PrimitiveeF13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct _PebbleGlassButtonStyle : SwiftUI.ButtonStyle {
+  public init()
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI01_A16GlassButtonStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct _PebbleGlassProminentButtonStyle : SwiftUI.ButtonStyle {
+  public init()
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI01_A25GlassProminentButtonStyleV8makeBody13configurationQr05SwiftB00eF13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleOutlineButtonStyle : SwiftUI.ButtonStyle {
+  public init()
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A18OutlineButtonStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleBorderedButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A19BorderedButtonStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleAutomaticButtonStyle : SwiftUI.PrimitiveButtonStyle {
+  public func makeBody(configuration: SwiftUI.PrimitiveButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A20AutomaticButtonStyleV8makeBody13configurationQr05SwiftB009PrimitivedE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleBorderlessButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A21BorderlessButtonStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleBorderedProminentButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A28BorderedProminentButtonStyleV8makeBody13configurationQr05SwiftB00eF13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct NoticeContentViewRoundButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI33NoticeContentViewRoundButtonStyleV8makeBody13configurationQr05SwiftB00gH13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct NoticeContentViewBorderedButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: SwiftUI.ButtonStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI36NoticeContentViewBorderedButtonStyleV8makeBody13configurationQr05SwiftB00gH13ConfigurationV_tF", 0) __
+}
+
+extension SwiftUI.ButtonStyle where Self == PebbleUI.PebbleBorderedButtonStyle {
+  public static var pebbleBordered: PebbleUI.PebbleBorderedButtonStyle { get }
+}
+extension SwiftUI.ButtonStyle where Self == PebbleUI.PebbleBorderlessButtonStyle {
+  public static var pebbleBorderless: PebbleUI.PebbleBorderlessButtonStyle { get }
+}
+extension SwiftUI.ButtonStyle where Self == PebbleUI.PebbleBorderedProminentButtonStyle {
+  public static var pebbleBorderedProminent: PebbleUI.PebbleBorderedProminentButtonStyle { get }
+}
+extension SwiftUI.ButtonStyle where Self == PebbleUI.PebbleOutlineButtonStyle {
+  public static var pebbleOutline: PebbleUI.PebbleOutlineButtonStyle { get }
+}
+extension SwiftUI.PrimitiveButtonStyle where Self == PebbleUI.PebbleAutomaticButtonStyle {
+  public static var pebbleAutomatic: PebbleUI.PebbleAutomaticButtonStyle { get }
+}
+
+@_Concurrency.MainActor @preconcurrency public struct SystemStatusBar : SwiftUI.View {
+  public init()
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI15SystemStatusBarV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct DynamicTypeSizePicker : SwiftUI.View {
+  public init(selection: SwiftUI.Binding<SwiftUI.DynamicTypeSize?>)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI21DynamicTypeSizePickerV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct ExpandedMenuBackgroundView : SwiftUI.View {
+  public init(isVisible: Swift.Bool, tapGesture: @escaping () -> Swift.Void)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI26ExpandedMenuBackgroundViewV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct ModulesClearBackgroundView : SwiftUI.View {
+  public init(cornerRadius: CoreGraphics.CGFloat)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI26ModulesClearBackgroundViewV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct ModulesSheerBackgroundView : SwiftUI.View {
+  public init(cornerRadius: CoreGraphics.CGFloat?)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI26ModulesSheerBackgroundViewV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct ModulesSelectedBackgroundView : SwiftUI.View {
+  public init(cornerRadius: CoreGraphics.CGFloat)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI29ModulesSelectedBackgroundViewV4bodyQrvp", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct ModulePressStateBackgroundView : SwiftUI.View {
+  public init(cornerRadius: CoreGraphics.CGFloat, isModuleSelected: Swift.Bool)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI30ModulePressStateBackgroundViewV4bodyQrvp", 0) __
+}
+
+public struct PebbleGroupedListStyle : SwiftUI.ListStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._ListValue<PebbleUI.PebbleGroupedListStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._ListValue<PebbleUI.PebbleGroupedListStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+public struct PebbleNewGroupedListStyle : SwiftUI.ListStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._ListValue<PebbleUI.PebbleNewGroupedListStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._ListValue<PebbleUI.PebbleNewGroupedListStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+public struct PebbleSheetPickerStyle : SwiftUI.PickerStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleSheetPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleSheetPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+public struct PebbleListMenuPickerStyle : SwiftUI.PickerStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleListMenuPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleListMenuPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+public struct PebbleAutomaticPickerStyle : SwiftUI.PickerStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleAutomaticPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleAutomaticPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+public struct PebbleNavigationLinkPickerStyle : SwiftUI.PickerStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleNavigationLinkPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<PebbleUI.PebbleNavigationLinkPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
+}
+
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleSwitchToggleStyle : SwiftUI.ToggleStyle {
+  public func makeBody(configuration: SwiftUI.ToggleStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A17SwitchToggleStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleIconOnlyLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A18IconOnlyLabelStyleV8makeBody13configurationQr05SwiftB00eF13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleAutomaticLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A19AutomaticLabelStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleCheckboxToggleStyle : SwiftUI.ToggleStyle {
+  public func makeBody(configuration: SwiftUI.ToggleStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A19CheckboxToggleStyleV8makeBody13configurationQr05SwiftB00dE13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleTitleOnlyLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A19TitleOnlyLabelStyleV8makeBody13configurationQr05SwiftB00eF13ConfigurationV_tF", 0) __
+}
+
+
+
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleTitleAndIconLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A22TitleAndIconLabelStyleV8makeBody13configurationQr05SwiftB00fG13ConfigurationV_tF", 0) __
+}
+
+
+
+@_Concurrency.MainActor @preconcurrency public struct PebbleTitleAndAccessoryLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A27TitleAndAccessoryLabelStyleV8makeBody13configurationQr05SwiftB00fG13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct LiveActivityLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI22LiveActivityLabelStyleV8makeBody13configurationQr05SwiftB00eF13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct NoticeContentViewLabelStyle : SwiftUI.LabelStyle {
+  public func makeBody(configuration: SwiftUI.LabelStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI27NoticeContentViewLabelStyleV8makeBody13configurationQr05SwiftB00fG13ConfigurationV_tF", 0) __
+}
+
+@_Concurrency.MainActor @preconcurrency public struct RoundedRectProgressViewStyle : SwiftUI.ProgressViewStyle {
+  public init()
+  public func makeBody(configuration: SwiftUI.ProgressViewStyleConfiguration) -> some SwiftUI.View
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI28RoundedRectProgressViewStyleV8makeBody13configurationQr05SwiftB00efG13ConfigurationV_tF", 0) __
+}
+
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.LiveActivityLabelStyle {
+  public static var liveActivity: PebbleUI.LiveActivityLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleTitleAndIconLabelStyle {
+  public static var pebbleReversedTitleAndIcon: PebbleUI.PebbleTitleAndIconLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleTitleAndIconLabelStyle {
+  public static var pebbleTitleAndIcon: PebbleUI.PebbleTitleAndIconLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleTitleAndAccessoryLabelStyle {
+  public static var pebbleReversedTitleAndAccessory: PebbleUI.PebbleTitleAndAccessoryLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleTitleAndAccessoryLabelStyle {
+  public static var pebbleTitleAndAccessory: PebbleUI.PebbleTitleAndAccessoryLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleIconOnlyLabelStyle {
+  public static var pebbleIconOnly: PebbleUI.PebbleIconOnlyLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleAutomaticLabelStyle {
+  public static var pebbleAutomatic: PebbleUI.PebbleAutomaticLabelStyle { get }
+}
+
+extension SwiftUI.LabelStyle where Self == PebbleUI.PebbleTitleOnlyLabelStyle {
+  public static var pebbleTitleOnly: PebbleUI.PebbleTitleOnlyLabelStyle { get }
+}
+
+
+
+
+extension SwiftUI.ToggleStyle where Self == PebbleUI.PebbleSwitchToggleStyle {
+  public static var pebbleSwitch: PebbleUI.PebbleSwitchToggleStyle { get }
+}
+
+extension SwiftUI.ToggleStyle where Self == PebbleUI.PebbleSwitchToggleStyle {
+  public static var pebbleAutomatic: PebbleUI.PebbleSwitchToggleStyle { get }
+}
+
+extension SwiftUI.ToggleStyle where Self == PebbleUI.PebbleCheckboxToggleStyle {
+  public static var pebbleCheckbox: PebbleUI.PebbleCheckboxToggleStyle { get }
+}
+
+@_Concurrency.MainActor @preconcurrency public struct PebblePicker<Label, SelectionValue, Content> : SwiftUI.View where Label : SwiftUI.View, SelectionValue : Swift.Hashable, Content : SwiftUI.View {
+  public init(selection: SwiftUI.Binding<SelectionValue>, @SwiftUI.ViewBuilder content: () -> Content, @SwiftUI.ViewBuilder label: () -> Label)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A6PickerV4bodyQrvp", 0) __<Label, SelectionValue, Content>
+}
+@_Concurrency.MainActor @preconcurrency public struct NoticeGroup<Content> : SwiftUI.View where Content : SwiftUI.View {
+  public init(@SwiftUI.ViewBuilder content: () -> Content)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI11NoticeGroupV4bodyQrvp", 0) __<Content>
+}
+@_Concurrency.MainActor @preconcurrency public struct PebbleMicaView : SwiftUI.View {
+  public enum ContentMode : Swift.Hashable {
+    case scaleToFit
+    case scaleToFill
+  }
+  public init(packageName: Swift.String, bundle: Foundation.Bundle, selectedState: Swift.String?, contentMode: PebbleUI.PebbleMicaView.ContentMode)
+  public var packageName: Swift.String { get }
+  public var bundle: Foundation.Bundle { get }
+  public var selectedState: Swift.String? { get }
+  public var contentMode: PebbleUI.PebbleMicaView.ContentMode { get }
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A8MicaViewV4bodyQrvp", 0) __
+}
+public struct PebbleMicaAnimationTimelineEntry {
+  public init(stateName: Swift.String?, duration: Swift.Duration)
+}
+@_Concurrency.MainActor @preconcurrency public struct PebbleAnimatedMicaView : SwiftUI.View {
+  public init(packageName: Swift.String, bundle: Foundation.Bundle, selectedState: Swift.String?, timeline: SwiftUI.Binding<[PebbleUI.PebbleMicaAnimationTimelineEntry]>, isAnimating: Swift.Bool, loopingEnabled: Swift.Bool, contentMode: PebbleUI.PebbleMicaView.ContentMode, stateChangeHandler: @escaping (Swift.String?) -> Swift.Void, animationCompletion: @escaping () -> Swift.Void)
+  public init(packageName: Swift.String, bundle: Foundation.Bundle, selectedState: Swift.String?, timeline: SwiftUI.Binding<[PebbleUI.PebbleMicaAnimationTimelineEntry]>, shouldAnimate: Swift.Bool, isAnimating: Swift.Bool, loopingEnabled: Swift.Bool, contentMode: PebbleUI.PebbleMicaView.ContentMode, stateChangeHandler: @escaping (Swift.String?) -> Swift.Void, animationCompletion: @escaping () -> Swift.Void)
+  public var body: some SwiftUI.View { get }
+  public typealias Body = @_opaqueReturnTypeOf("$s8PebbleUI0A16AnimatedMicaViewV4bodyQrvp", 0) __
+}
+
+public enum DisplayStyle : Swift.Hashable {
+  case standard
+  case nightMode
+}
+
+public enum LevelOfDetail : Swift.Hashable, Swift.Comparable {
+  case decreased
+  case standard
+  case increased
+  public static func < (lhs: PebbleUI.LevelOfDetail, rhs: PebbleUI.LevelOfDetail) -> Swift.Bool
+}
+
+public enum PlacematStyle : Swift.Hashable, Swift.Comparable {
+  case round
+  case capsule
+  case platter
+  public static func < (lhs: PebbleUI.PlacematStyle, rhs: PebbleUI.PlacematStyle) -> Swift.Bool
+}
+
+public enum PebbleAlertStyle : Swift.Hashable {
+  case standard
+}
+
+public enum PebbleTitleDisplayMode : Swift.Hashable {
+  case automatic
+  case inline
+  case inlineLeading
+  case large
+  case compact
+}
+
+public enum PebbleSheetTransition : Swift.Hashable {
+  case automatic
+  case slide
+  case blur
+}
+
+public enum PebbleToolbarItemPlacement : Swift.Hashable {
+  case automatic
+  case topBarLeading
+  case topBarTrailing
+  case bottomBar
+  case principal
+  case search
+}
